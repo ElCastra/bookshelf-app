@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="img/books_new.ico" type="image/x-icon" />
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="header-title">Aplikasi Baca Buku</h1>
+    </header>
+    <main>
+      <!-- Section Form Buku -->
+      <div class="left">
+        <section class="form_section">
+          <h2>Masukkan Buku Baru</h2>
+          <form id="bookForm">
+            <div class="input">
+              <label for="title">Judul</label>
+              <input
+                type="text"
+                placeholder="ex. 1895"
+                id="title"
+                required
+                autocomplete="off" />
+            </div>
+            <div class="input">
+              <label for="author">Penulis</label>
+              <input
+                type="text"
+                placeholder="ex. Tony Q."
+                id="author"
+                required
+                autocomplete="off" />
+            </div>
+            <div class="input">
+              <label for="year">Tahun</label>
+              <input
+                type="number"
+                placeholder="ex. 1997"
+                id="year"
+                required
+                autocomplete="off" />
+            </div>
+            <div class="input_check">
+              <label for="status" style="margin-right: 10px"
+                >Selesai Dibaca</label
+              >
+              <input type="checkbox" id="status" />
+            </div>
+            <button id="bookSubmit" type="submit">Tambah Buku</button>
+          </form>
+        </section>
+      </div>
+      <!-- Section Cari Buku -->
+      <div class="right">
+        <section class="search_section">
+          <form id="search">
+            <label for="searchBook">Judul Buku</label>
+            <input type="text" id="searchBook" />
+            <button type="submit" id="search_submit"><span>Cari!</span></button>
+          </form>
+        </section>
+
+        <!-- Section Kotak Buku -->
+        <section class="bookShelf_section">
+          <form class="listBook">
+            <h2>Belum Selesai Dibaca</h2>
+            <div id="incomplete"></div>
+          </form>
+          <form class="listBook">
+            <h2>Selesai Dibaca</h2>
+            <div id="complete"></div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <h2>Made By Brillian A. |<span id="now"></span></h2>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      const currentYear = new Date().getFullYear();
+      document.getElementById("now").textContent = " " + currentYear;
+    </script>
+  </body>
+</html>
